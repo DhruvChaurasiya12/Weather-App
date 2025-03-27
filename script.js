@@ -111,8 +111,8 @@ async function setWeekData(placeName){
     let forecastData = await response.json();
 
     console.log(forecastData);
-    minTempValue.innerText = forecastData.list[0].main.temp_min + minTempValue.innerText;
-    maxTempValue.innerText = forecastData.list[0].main.temp_max + maxTempValue.innerText;
+    minTempValue.innerText = `${forecastData.list[0].main.temp_min.toFixed(2)}°C`;
+    maxTempValue.innerText = `${forecastData.list[0].main.temp_max.toFixed(2)}°C`;
 
     displayForecast(forecastData.list);
 }
